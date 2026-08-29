@@ -1,332 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>XAT3LMAG8C | Ahmed Mohamed</title>
+<title>XAT3LMAG8Ca | Ahmed Mohamed</title>
 
-    <meta name="description"
-          content="XAT3LMAG8C - Ahmed Mohamed | Cybersecurity Portfolio">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    <style>
+html{
+    scroll-behavior:smooth;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body{
+    background:#020303;
+    color:#d8ffd8;
+    font-family:"Courier New",monospace;
+    overflow-x:hidden;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* MATRIX */
+#matrix{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    opacity:.14;
+}
 
-        body {
-            background: #020303;
-            color: #d7ffd7;
-            font-family: "Courier New", monospace;
-            overflow-x: hidden;
-        }
+/* SCAN LINES */
+body:after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:repeating-linear-gradient(
+        0deg,
+        rgba(0,255,100,.025),
+        rgba(0,255,100,.025) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+    z-index:50;
+}
 
-        #matrix {
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            opacity: 0.13;
-        }
+/* NAVBAR */
 
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background:
-                repeating-linear-gradient(
-                    0deg,
-                    rgba(0,255,100,0.025),
-                    rgba(0,255,100,0.025) 1px,
-                    transparent 1px,
-                    transparent 4px
-                );
-            z-index: 10;
-        }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.78);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,255,100,.18);
+    z-index:20;
+}
 
-        /* NAVBAR */
+.logo{
+    color:#00ff66;
+    font-size:21px;
+    font-weight:bold;
+    text-shadow:0 0 15px #00ff66;
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.75);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,255,100,0.15);
-            z-index: 20;
-        }
+nav a{
+    color:#888;
+    text-decoration:none;
+    margin-left:20px;
+    transition:.3s;
+}
 
-        .logo {
-            color: #00ff66;
-            font-size: 20px;
-            font-weight: bold;
-            text-shadow: 0 0 12px #00ff66;
-        }
+nav a:hover{
+    color:#00ff66;
+    text-shadow:0 0 12px #00ff66;
+}
 
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: 0.3s;
-        }
+/* HERO */
 
-        nav a:hover {
-            color: #00ff66;
-            text-shadow: 0 0 10px #00ff66;
-        }
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+}
 
-        /* HERO */
+.hero-content{
+    max-width:900px;
+}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px 50px;
-        }
+/* PROFILE IMAGE */
 
-        .hero-content {
-            max-width: 900px;
-        }
+.profile{
+    width:190px;
+    height:190px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #00ff66;
+    padding:6px;
+    box-shadow:
+        0 0 15px #00ff66,
+        0 0 45px rgba(0,255,100,.35);
+    animation:pulse 2.5s infinite;
+    margin-bottom:30px;
+}
 
-        .terminal {
-            color: #00ff66;
-            font-size: 15px;
-            margin-bottom: 25px;
-        }
+@keyframes pulse{
+    0%,100%{
+        box-shadow:
+        0 0 15px #00ff66,
+        0 0 35px rgba(0,255,100,.25);
+    }
 
-        .hero h1 {
-            font-size: clamp(45px, 9vw, 100px);
-            color: #fff;
-            text-shadow:
-                0 0 10px #00ff66,
-                0 0 30px rgba(0,255,100,0.5);
-            letter-spacing: 5px;
-        }
+    50%{
+        box-shadow:
+        0 0 25px #00ff66,
+        0 0 65px rgba(0,255,100,.45);
+    }
+}
 
-        .codename {
-            margin-top: 15px;
-            font-size: clamp(22px, 4vw, 38px);
-            color: #00ff66;
-            letter-spacing: 8px;
-            text-shadow: 0 0 15px #00ff66;
-        }
+.terminal{
+    color:#00ff66;
+    margin-bottom:20px;
+}
 
-        .typing {
-            margin-top: 25px;
-            color: #888;
-            font-size: 18px;
-        }
+.hero h1{
+    font-size:clamp(38px,8vw,90px);
+    color:#fff;
+    letter-spacing:4px;
+    text-shadow:
+        0 0 10px #00ff66,
+        0 0 35px rgba(0,255,100,.45);
+}
 
-        .cursor {
-            color: #00ff66;
-            animation: blink 0.7s infinite;
-        }
+.codename{
+    margin-top:15px;
+    font-size:clamp(22px,4vw,38px);
+    color:#00ff66;
+    letter-spacing:7px;
+    text-shadow:0 0 15px #00ff66;
+}
 
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
+.typing{
+    margin-top:25px;
+    color:#888;
+    font-size:17px;
+}
 
-        .status {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 10px 18px;
-            border: 1px solid #00ff66;
-            color: #00ff66;
-            box-shadow: 0 0 15px rgba(0,255,100,0.15);
-        }
+.cursor{
+    color:#00ff66;
+    animation:blink .7s infinite;
+}
 
-        /* SECTIONS */
+@keyframes blink{
+    50%{opacity:0;}
+}
 
-        section {
-            padding: 100px 8%;
-            max-width: 1200px;
-            margin: auto;
-        }
+.status{
+    display:inline-block;
+    margin-top:30px;
+    padding:10px 18px;
+    border:1px solid #00ff66;
+    color:#00ff66;
+    box-shadow:0 0 20px rgba(0,255,100,.15);
+}
 
-        .section-title {
-            color: #00ff66;
-            font-size: 30px;
-            margin-bottom: 35px;
-            text-shadow: 0 0 10px rgba(0,255,100,0.5);
-        }
+/* SECTIONS */
 
-        .section-title::before {
-            content: "> ";
-            color: #fff;
-        }
+section{
+    padding:100px 8%;
+    max-width:1200px;
+    margin:auto;
+}
 
-        /* ABOUT */
+.section-title{
+    color:#00ff66;
+    font-size:30px;
+    margin-bottom:35px;
+    text-shadow:0 0 12px rgba(0,255,100,.5);
+}
 
-        .about-box {
-            padding: 30px;
-            background: rgba(0,255,100,0.025);
-            border: 1px solid rgba(0,255,100,0.25);
-            box-shadow: 0 0 30px rgba(0,255,100,0.04);
-        }
+.section-title:before{
+    content:"> ";
+    color:#fff;
+}
 
-        .about-box p {
-            color: #aaa;
-            line-height: 2;
-            font-size: 17px;
-        }
+/* ABOUT */
 
-        .highlight {
-            color: #00ff66;
-        }
+.about-box{
+    padding:30px;
+    background:rgba(0,255,100,.025);
+    border:1px solid rgba(0,255,100,.25);
+    box-shadow:0 0 30px rgba(0,255,100,.04);
+}
 
-        /* SKILLS */
+.about-box p{
+    color:#aaa;
+    line-height:2;
+    font-size:17px;
+}
 
-        .skills {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-        }
+.highlight{
+    color:#00ff66;
+}
 
-        .skill {
-            padding: 20px;
-            border: 1px solid #123d23;
-            background: rgba(0,255,100,0.025);
-            transition: 0.3s;
-        }
+/* SKILLS */
 
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: #00ff66;
-            box-shadow: 0 0 20px rgba(0,255,100,0.15);
-        }
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
 
-        .skill span {
-            color: #00ff66;
-        }
+.skill{
+    padding:22px;
+    border:1px solid #123d23;
+    background:rgba(0,255,100,.025);
+    transition:.3s;
+}
 
-        /* PROJECTS */
+.skill:hover{
+    transform:translateY(-6px);
+    border-color:#00ff66;
+    box-shadow:0 0 25px rgba(0,255,100,.2);
+}
 
-        .projects {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.skill span{
+    color:#00ff66;
+}
 
-        .project {
-            padding: 25px;
-            border: 1px solid #143d25;
-            background: rgba(0,0,0,0.6);
-            transition: 0.3s;
-        }
+/* PROJECTS */
 
-        .project:hover {
-            border-color: #00ff66;
-            box-shadow: 0 0 25px rgba(0,255,100,0.15);
-        }
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 
-        .project h3 {
-            color: #00ff66;
-            margin-bottom: 15px;
-        }
+.project{
+    padding:25px;
+    border:1px solid #143d25;
+    background:rgba(0,0,0,.65);
+    transition:.3s;
+}
 
-        .project p {
-            color: #888;
-            line-height: 1.7;
-        }
+.project:hover{
+    transform:translateY(-5px);
+    border-color:#00ff66;
+    box-shadow:0 0 25px rgba(0,255,100,.15);
+}
 
-        /* CONTACT */
+.project h3{
+    color:#00ff66;
+    margin-bottom:15px;
+}
 
-        .contact {
-            text-align: center;
-        }
+.project p{
+    color:#888;
+    line-height:1.8;
+}
 
-        .contact p {
-            color: #888;
-            margin-bottom: 30px;
-        }
+/* CONTACT */
 
-        .buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+.contact{
+    text-align:center;
+}
 
-        .btn {
-            padding: 14px 25px;
-            border: 1px solid #00ff66;
-            color: #00ff66;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+.contact p{
+    color:#888;
+    margin-bottom:30px;
+}
 
-        .btn:hover {
-            background: #00ff66;
-            color: #000;
-            box-shadow: 0 0 25px #00ff66;
-        }
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
 
-        /* FOOTER */
+.btn{
+    padding:14px 25px;
+    border:1px solid #00ff66;
+    color:#00ff66;
+    text-decoration:none;
+    transition:.3s;
+}
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #123d23;
-            color: #555;
-        }
+.btn:hover{
+    background:#00ff66;
+    color:#000;
+    box-shadow:0 0 25px #00ff66;
+}
 
-        footer strong {
-            color: #00ff66;
-        }
+/* SOCIAL */
 
-        /* MOBILE */
+.social-title{
+    margin-top:60px;
+    margin-bottom:20px;
+    color:#777;
+}
 
-        @media (max-width: 700px) {
+.social-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-            nav {
-                padding: 15px 5%;
-            }
+.social{
+    padding:12px 20px;
+    border:1px solid #244;
+    color:#aaa;
+    text-decoration:none;
+    transition:.3s;
+}
 
-            nav .links {
-                display: none;
-            }
+.social:hover{
+    color:#00ff66;
+    border-color:#00ff66;
+    box-shadow:0 0 15px rgba(0,255,100,.2);
+}
 
-            .hero h1 {
-                letter-spacing: 2px;
-            }
+/* FOOTER */
 
-            .codename {
-                letter-spacing: 4px;
-            }
+footer{
+    text-align:center;
+    padding:45px 20px;
+    border-top:1px solid #123d23;
+    color:#555;
+}
 
-            section {
-                padding: 80px 5%;
-            }
-        }
+footer strong{
+    color:#00ff66;
+}
 
-    </style>
+/* MOBILE */
+
+@media(max-width:700px){
+
+    nav{
+        padding:15px 5%;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    .hero h1{
+        letter-spacing:2px;
+    }
+
+    .codename{
+        letter-spacing:3px;
+    }
+
+    .profile{
+        width:160px;
+        height:160px;
+    }
+
+    section{
+        padding:80px 5%;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <canvas id="matrix"></canvas>
 
+<!-- NAVBAR -->
+
 <nav>
 
     <div class="logo">
-        XAT3LMAG8C
+        XAT3LMAG8Ca
     </div>
 
     <div class="links">
@@ -338,9 +397,18 @@
 
 </nav>
 
+
+<!-- HERO -->
+
 <header class="hero">
 
     <div class="hero-content">
+
+        <img
+            src="me.jpg"
+            alt="Ahmed Mohamed"
+            class="profile"
+        >
 
         <div class="terminal">
             [ SYSTEM ONLINE ]
@@ -351,7 +419,7 @@
         </h1>
 
         <div class="codename">
-            XAT3LMAG8C
+            XAT3LMAG8Ca
         </div>
 
         <div class="typing">
@@ -367,6 +435,9 @@
 
 </header>
 
+
+<!-- ABOUT -->
+
 <section id="about">
 
     <h2 class="section-title">
@@ -378,30 +449,37 @@
         <p>
 
             Hello, I'm
-            <span class="highlight">Ahmed Mohamed</span>.
+            <span class="highlight">
+                Ahmed Mohamed
+            </span>.
 
             <br><br>
 
-            Online identity:
-            <span class="highlight">XAT3LMAG8C</span>.
+            My digital identity is
+            <span class="highlight">
+                XAT3LMAG8Ca
+            </span>.
 
             <br><br>
 
             I'm interested in technology,
-            cybersecurity, Linux, programming
-            and exploring how digital systems work.
+            cybersecurity, Linux, programming,
+            web development and digital exploration.
 
             <br><br>
 
-            This website is my personal digital space —
-            a place where I document my interests,
-            experiments and projects.
+            This is my personal digital space,
+            where I share my interests,
+            projects and experience.
 
         </p>
 
     </div>
 
 </section>
+
+
+<!-- SKILLS -->
 
 <section id="skills">
 
@@ -412,32 +490,41 @@
     <div class="skills">
 
         <div class="skill">
-            <span>[01]</span> Cybersecurity
+            <span>[01]</span>
+            Cybersecurity
         </div>
 
         <div class="skill">
-            <span>[02]</span> Linux
+            <span>[02]</span>
+            Linux
         </div>
 
         <div class="skill">
-            <span>[03]</span> Python
+            <span>[03]</span>
+            Python
         </div>
 
         <div class="skill">
-            <span>[04]</span> Git & GitHub
+            <span>[04]</span>
+            Git & GitHub
         </div>
 
         <div class="skill">
-            <span>[05]</span> Termux
+            <span>[05]</span>
+            Termux
         </div>
 
         <div class="skill">
-            <span>[06]</span> Web Development
+            <span>[06]</span>
+            Web Development
         </div>
 
     </div>
 
 </section>
+
+
+<!-- PROJECTS -->
 
 <section id="projects">
 
@@ -454,12 +541,12 @@
             </h3>
 
             <p>
-                A personal cyber-style website
-                designed and developed using
-                HTML, CSS and JavaScript.
+                A personal cyber-style portfolio
+                built using HTML, CSS and JavaScript.
             </p>
 
         </div>
+
 
         <div class="project">
 
@@ -468,11 +555,12 @@
             </h3>
 
             <p>
-                An online fashion store project
+                A fashion accessories website
                 deployed using GitHub and Vercel.
             </p>
 
         </div>
+
 
         <div class="project">
 
@@ -492,6 +580,9 @@
 
 </section>
 
+
+<!-- CONTACT -->
+
 <section id="contact" class="contact">
 
     <h2 class="section-title">
@@ -499,20 +590,55 @@
     </h2>
 
     <p>
-        Find me across the digital world.
+        Connect with me across the digital world.
     </p>
+
 
     <div class="buttons">
 
+        <!-- WHATSAPP -->
+
         <a
             class="btn"
+            href="https://wa.me/201500083355"
+            target="_blank">
+            WhatsApp
+        </a>
+
+
+        <!-- TELEGRAM -->
+
+        <a
+            class="btn"
+            href="https://t.me/XAT3LMAG8Ca"
+            target="_blank">
+            Telegram
+        </a>
+
+    </div>
+
+
+    <div class="social-title">
+        SOCIAL NETWORKS
+    </div>
+
+
+    <div class="social-buttons">
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="social"
             href="https://www.instagram.com/xat_3lmag8c/"
             target="_blank">
             Instagram
         </a>
 
+
+        <!-- FACEBOOK -->
+
         <a
-            class="btn"
+            class="social"
             href="https://www.facebook.com/share/1JS8NTCRxe/"
             target="_blank">
             Facebook
@@ -522,132 +648,149 @@
 
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
 
     <p>
-        &copy; 2026
-        <strong>XAT3LMAG8C</strong>
+        © 2026
+        <strong>XAT3LMAG8Ca</strong>
         — Ahmed Mohamed
     </p>
 
 </footer>
 
+
 <script>
 
-    /* TYPING EFFECT */
+/* =========================
+   TYPING EFFECT
+========================= */
 
-    const text =
-        "CYBERSECURITY • TECHNOLOGY • CODE • DIGITAL EXPLORATION";
+const text =
+"CYBERSECURITY • TECHNOLOGY • CODE • DIGITAL EXPLORATION";
 
-    let index = 0;
+let index = 0;
 
-    function typeText() {
+function typeText(){
 
-        if (index < text.length) {
+    if(index < text.length){
 
-            document.getElementById("typing")
-                .textContent += text.charAt(index);
+        document.getElementById("typing")
+        .textContent += text.charAt(index);
 
-            index++;
+        index++;
 
-            setTimeout(typeText, 45);
-
-        }
-
+        setTimeout(typeText,45);
     }
 
-    typeText();
+}
+
+typeText();
 
 
-    /* MATRIX EFFECT */
+/* =========================
+   MATRIX EFFECT
+========================= */
 
-    const canvas =
-        document.getElementById("matrix");
+const canvas =
+document.getElementById("matrix");
 
-    const ctx =
-        canvas.getContext("2d");
+const ctx =
+canvas.getContext("2d");
 
-    function resizeCanvas() {
 
-        canvas.width =
-            window.innerWidth;
+function resizeCanvas(){
 
-        canvas.height =
-            window.innerHeight;
+    canvas.width =
+    window.innerWidth;
 
-    }
+    canvas.height =
+    window.innerHeight;
 
-    resizeCanvas();
+}
 
-    window.addEventListener(
-        "resize",
-        resizeCanvas
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+const characters =
+"01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%";
+
+const fontSize = 14;
+
+let columns =
+Math.floor(canvas.width / fontSize);
+
+let drops =
+Array(columns).fill(1);
+
+
+function matrix(){
+
+    ctx.fillStyle =
+    "rgba(0,0,0,0.06)";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
     );
 
-    const characters =
-        "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%";
+    ctx.fillStyle =
+    "#00ff66";
 
-    const fontSize = 14;
+    ctx.font =
+    fontSize + "px monospace";
 
-    let columns =
-        Math.floor(canvas.width / fontSize);
 
-    let drops =
-        Array(columns).fill(1);
+    for(
+        let i = 0;
+        i < drops.length;
+        i++
+    ){
 
-    function matrix() {
+        const char =
+        characters[
+            Math.floor(
+                Math.random() *
+                characters.length
+            )
+        ];
 
-        ctx.fillStyle =
-            "rgba(0,0,0,0.06)";
 
-        ctx.fillRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
+        ctx.fillText(
+            char,
+            i * fontSize,
+            drops[i] * fontSize
         );
 
-        ctx.fillStyle =
-            "#00ff66";
 
-        ctx.font =
-            fontSize + "px monospace";
+        if(
+            drops[i] * fontSize >
+            canvas.height &&
+            Math.random() > 0.975
+        ){
 
-        for (
-            let i = 0;
-            i < drops.length;
-            i++
-        ) {
-
-            const char =
-                characters[
-                    Math.floor(
-                        Math.random() *
-                        characters.length
-                    )
-                ];
-
-            ctx.fillText(
-                char,
-                i * fontSize,
-                drops[i] * fontSize
-            );
-
-            if (
-                drops[i] * fontSize >
-                canvas.height &&
-                Math.random() > 0.975
-            ) {
-                drops[i] = 0;
-            }
-
-            drops[i]++;
+            drops[i] = 0;
 
         }
 
+
+        drops[i]++;
+
     }
 
-    setInterval(matrix, 50);
+}
+
+
+setInterval(matrix,50);
 
 </script>
 
