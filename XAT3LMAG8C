@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XAT3LMAG8C | Ahmed Mohamed</title>
+
+    <meta name="description"
+          content="XAT3LMAG8C - Ahmed Mohamed | Cybersecurity Portfolio">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #020303;
+            color: #d7ffd7;
+            font-family: "Courier New", monospace;
+            overflow-x: hidden;
+        }
+
+        #matrix {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            opacity: 0.13;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0,255,100,0.025),
+                    rgba(0,255,100,0.025) 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+            z-index: 10;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,255,100,0.15);
+            z-index: 20;
+        }
+
+        .logo {
+            color: #00ff66;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 12px #00ff66;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ff66;
+            text-shadow: 0 0 10px #00ff66;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .terminal {
+            color: #00ff66;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 9vw, 100px);
+            color: #fff;
+            text-shadow:
+                0 0 10px #00ff66,
+                0 0 30px rgba(0,255,100,0.5);
+            letter-spacing: 5px;
+        }
+
+        .codename {
+            margin-top: 15px;
+            font-size: clamp(22px, 4vw, 38px);
+            color: #00ff66;
+            letter-spacing: 8px;
+            text-shadow: 0 0 15px #00ff66;
+        }
+
+        .typing {
+            margin-top: 25px;
+            color: #888;
+            font-size: 18px;
+        }
+
+        .cursor {
+            color: #00ff66;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 18px;
+            border: 1px solid #00ff66;
+            color: #00ff66;
+            box-shadow: 0 0 15px rgba(0,255,100,0.15);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 8%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            color: #00ff66;
+            font-size: 30px;
+            margin-bottom: 35px;
+            text-shadow: 0 0 10px rgba(0,255,100,0.5);
+        }
+
+        .section-title::before {
+            content: "> ";
+            color: #fff;
+        }
+
+        /* ABOUT */
+
+        .about-box {
+            padding: 30px;
+            background: rgba(0,255,100,0.025);
+            border: 1px solid rgba(0,255,100,0.25);
+            box-shadow: 0 0 30px rgba(0,255,100,0.04);
+        }
+
+        .about-box p {
+            color: #aaa;
+            line-height: 2;
+            font-size: 17px;
+        }
+
+        .highlight {
+            color: #00ff66;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 20px;
+            border: 1px solid #123d23;
+            background: rgba(0,255,100,0.025);
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: #00ff66;
+            box-shadow: 0 0 20px rgba(0,255,100,0.15);
+        }
+
+        .skill span {
+            color: #00ff66;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            padding: 25px;
+            border: 1px solid #143d25;
+            background: rgba(0,0,0,0.6);
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            border-color: #00ff66;
+            box-shadow: 0 0 25px rgba(0,255,100,0.15);
+        }
+
+        .project h3 {
+            color: #00ff66;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 14px 25px;
+            border: 1px solid #00ff66;
+            color: #00ff66;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #00ff66;
+            color: #000;
+            box-shadow: 0 0 25px #00ff66;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #123d23;
+            color: #555;
+        }
+
+        footer strong {
+            color: #00ff66;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav .links {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: 2px;
+            }
+
+            .codename {
+                letter-spacing: 4px;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+
+    <div class="logo">
+        XAT3LMAG8C
+    </div>
+
+    <div class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="terminal">
+            [ SYSTEM ONLINE ]
+        </div>
+
+        <h1>
+            AHMED MOHAMED
+        </h1>
+
+        <div class="codename">
+            XAT3LMAG8C
+        </div>
+
+        <div class="typing">
+            <span id="typing"></span>
+            <span class="cursor">█</span>
+        </div>
+
+        <div class="status">
+            ● SYSTEM ACTIVE
+        </div>
+
+    </div>
+
+</header>
+
+<section id="about">
+
+    <h2 class="section-title">
+        ABOUT_ME
+    </h2>
+
+    <div class="about-box">
+
+        <p>
+
+            Hello, I'm
+            <span class="highlight">Ahmed Mohamed</span>.
+
+            <br><br>
+
+            Online identity:
+            <span class="highlight">XAT3LMAG8C</span>.
+
+            <br><br>
+
+            I'm interested in technology,
+            cybersecurity, Linux, programming
+            and exploring how digital systems work.
+
+            <br><br>
+
+            This website is my personal digital space —
+            a place where I document my interests,
+            experiments and projects.
+
+        </p>
+
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <h2 class="section-title">
+        SKILLS
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <span>[01]</span> Cybersecurity
+        </div>
+
+        <div class="skill">
+            <span>[02]</span> Linux
+        </div>
+
+        <div class="skill">
+            <span>[03]</span> Python
+        </div>
+
+        <div class="skill">
+            <span>[04]</span> Git & GitHub
+        </div>
+
+        <div class="skill">
+            <span>[05]</span> Termux
+        </div>
+
+        <div class="skill">
+            <span>[06]</span> Web Development
+        </div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2 class="section-title">
+        PROJECTS
+    </h2>
+
+    <div class="projects">
+
+        <div class="project">
+
+            <h3>
+                > Personal Portfolio
+            </h3>
+
+            <p>
+                A personal cyber-style website
+                designed and developed using
+                HTML, CSS and JavaScript.
+            </p>
+
+        </div>
+
+        <div class="project">
+
+            <h3>
+                > Fashion Accessories
+            </h3>
+
+            <p>
+                An online fashion store project
+                deployed using GitHub and Vercel.
+            </p>
+
+        </div>
+
+        <div class="project">
+
+            <h3>
+                > Cybersecurity Lab
+            </h3>
+
+            <p>
+                Personal learning experiments
+                involving Linux, networking,
+                security and automation.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <h2 class="section-title">
+        CONTACT
+    </h2>
+
+    <p>
+        Find me across the digital world.
+    </p>
+
+    <div class="buttons">
+
+        <a
+            class="btn"
+            href="https://www.instagram.com/xat_3lmag8c/"
+            target="_blank">
+            Instagram
+        </a>
+
+        <a
+            class="btn"
+            href="https://www.facebook.com/share/1JS8NTCRxe/"
+            target="_blank">
+            Facebook
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        &copy; 2026
+        <strong>XAT3LMAG8C</strong>
+        — Ahmed Mohamed
+    </p>
+
+</footer>
+
+<script>
+
+    /* TYPING EFFECT */
+
+    const text =
+        "CYBERSECURITY • TECHNOLOGY • CODE • DIGITAL EXPLORATION";
+
+    let index = 0;
+
+    function typeText() {
+
+        if (index < text.length) {
+
+            document.getElementById("typing")
+                .textContent += text.charAt(index);
+
+            index++;
+
+            setTimeout(typeText, 45);
+
+        }
+
+    }
+
+    typeText();
+
+
+    /* MATRIX EFFECT */
+
+    const canvas =
+        document.getElementById("matrix");
+
+    const ctx =
+        canvas.getContext("2d");
+
+    function resizeCanvas() {
+
+        canvas.width =
+            window.innerWidth;
+
+        canvas.height =
+            window.innerHeight;
+
+    }
+
+    resizeCanvas();
+
+    window.addEventListener(
+        "resize",
+        resizeCanvas
+    );
+
+    const characters =
+        "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%";
+
+    const fontSize = 14;
+
+    let columns =
+        Math.floor(canvas.width / fontSize);
+
+    let drops =
+        Array(columns).fill(1);
+
+    function matrix() {
+
+        ctx.fillStyle =
+            "rgba(0,0,0,0.06)";
+
+        ctx.fillRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        ctx.fillStyle =
+            "#00ff66";
+
+        ctx.font =
+            fontSize + "px monospace";
+
+        for (
+            let i = 0;
+            i < drops.length;
+            i++
+        ) {
+
+            const char =
+                characters[
+                    Math.floor(
+                        Math.random() *
+                        characters.length
+                    )
+                ];
+
+            ctx.fillText(
+                char,
+                i * fontSize,
+                drops[i] * fontSize
+            );
+
+            if (
+                drops[i] * fontSize >
+                canvas.height &&
+                Math.random() > 0.975
+            ) {
+                drops[i] = 0;
+            }
+
+            drops[i]++;
+
+        }
+
+    }
+
+    setInterval(matrix, 50);
+
+</script>
+
+</body>
+</html>
